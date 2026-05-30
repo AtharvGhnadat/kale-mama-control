@@ -1,1 +1,4 @@
 project_id = "oduvabclpnnvklkxspzi"
+
+[functions.esp32-command]
+verify_jwt = false
