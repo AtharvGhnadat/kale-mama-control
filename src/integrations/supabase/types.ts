@@ -14,7 +14,180 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      command_logs: {
+        Row: {
+          command: string
+          command_source: string | null
+          created_at: string | null
+          device_name: string | null
+          esp32_ip: string | null
+          id: string
+          response_message: string | null
+          status: string | null
+          target_url: string | null
+          user_id: string | null
+        }
+        Insert: {
+          command: string
+          command_source?: string | null
+          created_at?: string | null
+          device_name?: string | null
+          esp32_ip?: string | null
+          id?: string
+          response_message?: string | null
+          status?: string | null
+          target_url?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          command?: string
+          command_source?: string | null
+          created_at?: string | null
+          device_name?: string | null
+          esp32_ip?: string | null
+          id?: string
+          response_message?: string | null
+          status?: string | null
+          target_url?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      devices: {
+        Row: {
+          created_at: string | null
+          current_state: boolean | null
+          device_name: string
+          device_type: string
+          id: string
+          is_active: boolean | null
+          relay_logic: string
+          relay_pin: number
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          current_state?: boolean | null
+          device_name: string
+          device_type: string
+          id?: string
+          is_active?: boolean | null
+          relay_logic: string
+          relay_pin: number
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          current_state?: boolean | null
+          device_name?: string
+          device_type?: string
+          id?: string
+          is_active?: boolean | null
+          relay_logic?: string
+          relay_pin?: number
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      esp32_settings: {
+        Row: {
+          created_at: string | null
+          device_name: string | null
+          esp32_ip: string
+          id: string
+          is_active: boolean | null
+          last_connected_at: string | null
+          location: string | null
+          updated_at: string | null
+          user_id: string | null
+          wifi_name: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          device_name?: string | null
+          esp32_ip: string
+          id?: string
+          is_active?: boolean | null
+          last_connected_at?: string | null
+          location?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          wifi_name?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          device_name?: string | null
+          esp32_ip?: string
+          id?: string
+          is_active?: boolean | null
+          last_connected_at?: string | null
+          location?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          wifi_name?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          department: string | null
+          full_name: string | null
+          id: string
+          role: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          department?: string | null
+          full_name?: string | null
+          id: string
+          role?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          department?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      voice_command_logs: {
+        Row: {
+          created_at: string | null
+          id: string
+          matched_command: string | null
+          recognized_text: string
+          response_message: string | null
+          status: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          matched_command?: string | null
+          recognized_text: string
+          response_message?: string | null
+          status?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          matched_command?: string | null
+          recognized_text?: string
+          response_message?: string | null
+          status?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
